@@ -14,34 +14,23 @@ export class PessoaService {
   constructor(private httpClient: HttpClient) { }
 
   listarTodos(): Observable<Pessoa[]> {
-    return this.httpClient.get<Pessoa[]>(`${environment.apiUrl}`)
-      .pipe(catchError(this.errorHandler));
+    return this.httpClient.get<Pessoa[]>(`${environment.apiUrl}`);
   }
 
   encontrarPorId(id: string): Observable<Pessoa> {
-    return this.httpClient.get<Pessoa>(`${environment.apiUrl}/${id}`)
-      .pipe(catchError(this.errorHandler));
+    return this.httpClient.get<Pessoa>(`${environment.apiUrl}/${id}`);
   }
 
   salvar(pessoa: Pessoa) {
-    return this.httpClient.post(`${environment.apiUrl}`, pessoa)
-      .pipe(catchError(this.errorHandler));;
+    return this.httpClient.post(`${environment.apiUrl}`, pessoa);
   }
 
   atualizar(id: string, pessoa: Pessoa) {
-    return this.httpClient.put(`${environment.apiUrl}/${id}`, pessoa)
-      .pipe(catchError(this.errorHandler));
+    return this.httpClient.put(`${environment.apiUrl}/${id}`, pessoa);
   }
 
   deletar(id: string) {
-    return this.httpClient.delete(`${environment.apiUrl}/${id}`)
-      .pipe(catchError(this.errorHandler));
-  }
-
-  private errorHandler(error: HttpErrorResponse) {
-    return throwError(
-      `Erro na requisição. Mensagem: ${error.error}`
-    )
+    return this.httpClient.delete(`${environment.apiUrl}/${id}`);
   }
 
 }

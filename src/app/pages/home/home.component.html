@@ -34,23 +34,26 @@
                 <div [formGroupName]="i">
                     <div class="campo">
                         <label>Nome</label>
-                        <input type="text" formControlName="contato_nome" required>
+                        <input type="text" formControlName="nome" required>
                     </div>
                     <div class="grupo">
                         <div class="campo">
                             <label>Telefone</label>
-                            <input type="text" formControlName="contato_telefone" required>
+                            <input type="text" formControlName="telefone" required>
                         </div>
                         <div class="campo">
                             <label>Email</label>
-                            <input type="text" formControlName="contato_email" required>
+                            <input type="text" formControlName="email" required>
                         </div>
                     </div>
                     <br><br>
                 </div>
             </div>
         </div>
-        <button type="submit" class="cadastrar">Cadastrar</button>
+        <button [disabled]="carregando" type="submit" class="cadastrar">
+            <span *ngIf="carregando" class="spinner-border spinner-border-sm mr-1"></span>
+            Cadastrar
+        </button>
     </form>
 
 </div>
