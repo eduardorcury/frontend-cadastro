@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder } from '@angular/forms';
+import { PessoaService } from 'src/app/shared/services/pessoa.service';
+
+import { first } from 'rxjs/operators';
+import { Pessoa } from 'src/app/shared/models/pessoa.model';
 
 @Component({
   selector: 'app-home',
@@ -21,10 +25,14 @@ export class HomeComponent {
     ]),
   });
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+              private pessoaService: PessoaService) { }
 
   salvar() {
-    console.log('teste');
+    console.log(this.form.value);
+    this.pessoaService.salvar(this.form.value)
+      .subscribe((pessoa: Pessoa) => console.log(pessoa));
+
   }
 
   get contatos() {

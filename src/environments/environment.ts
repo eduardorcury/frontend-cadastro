@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8000'
+  apiUrl: 'https://api-cadastro-eduardo.herokuapp.com/api/v1/pessoas'
 };
