@@ -1,0 +1,104 @@
+.forms {
+    margin: 80px auto;
+    padding: 64px;
+    max-width: 700px;
+    background: #FFF;
+    border-radius: 8px;
+  
+    display: flex;
+    flex-direction: column;
+}
+
+.forms hr {
+    border-top: 2px solid #2B7899;
+    width: 100%;
+}
+
+.forms legend {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.forms legend h2 {
+    font-size: 24px;
+}
+
+.campo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+}
+
+.campo label {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #2B7899;
+    font-weight: bold;
+}
+
+.campo input {
+    flex: 1;
+    background: #F7F7F7;
+    border-radius: 8px;
+    border: 0;
+    padding: 16px 24px;
+    font-size: 16px;
+    color: #6C6C80;
+}
+
+.forms .grupo {
+    display: flex;
+}
+
+.forms .grupo .campo + .campo {
+    margin-left: 40px;
+}
+
+.contatos {
+    display: flex;
+    align-items: center;
+}
+
+.contatos h3 {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.add-contato {
+    width: 200px;
+    height: 40px;
+    font-size: 14px;
+    border-radius: 6px;
+    margin-top: 20px;
+    background-color: #aae2fa;
+    color: #2B7899;
+    font-weight: 700;
+    border: 0;
+}
+
+.add-contato:hover,
+.cadastrar:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px #888888;
+}
+
+.cadastrar {
+    width: 200px;
+    height: 56px;
+    background:  #2B7899;
+    border-radius: 8px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 16px;
+    border: 0;
+    align-self: flex-end;
+    margin-top: 40px;
+}
+

@@ -1,38 +1,56 @@
-<form [formGroup]="form" (ngSubmit)="salvar()">
+<div class="forms">
+    <h1>Cadastro de novo usuário</h1>
+    <hr>
+    <legend>
+        <h2>Pessoa</h2>
+    </legend>
+    <form [formGroup]="form" (ngSubmit)="salvar()">
+        <div class="campos">
+            <div class="campo">
+                <label>Nome</label>
+                <input type="text" formControlName="nome" required>
+            </div>
+            <div class="grupo">
+                <div class="campo">
+                    <label>CPF</label>
+                    <input type="text" formControlName="cpf" required>
+                </div>
+                <div class="campo">
+                    <label>Data de nascimento</label>
+                    <input type="date" formControlName="nascimento" required>
+                </div>
+            </div> 
+        </div>
 
-    <label>
-        Nome:
-        <input type="text" formControlName="nome" required>
-    </label>
-    <label>
-        CPF:
-        <input type="text" formControlName="cpf" required>
-    </label>
-    <label>
-        Nascimento:
-        <input type="date" formControlName="nascimento" required>
-    </label>
+        <div class="contatos">
+            <legend>
+                <h2>Contatos</h2>
+            </legend>
+            <button type='button' class="add-contato" (click)="adicionarContato()">Adicionar Contato</button>
+        </div>
+        <div formArrayName="contatos">
+            <div *ngFor="let c of contatos.controls; let i=index">
 
-    <h3>Contatos</h3>
-    <button type='button' (click)="adicionarContato()">Adicionar Contato</button>
-    <div formArrayName="contatos">
-        <div *ngFor="let c of contatos.controls; let i=index">
-            <div [formGroupName]="i">
-                <label>
-                    Nome:
-                    <input type="text" formControlName="contato_nome" required>
-                </label>
-                <label>
-                    Telefone:
-                    <input type="text" formControlName="contato_telefone" required>
-                </label>
-                <label>
-                    Email:
-                    <input type="text" formControlName="contato_email" required>
-                </label>
+                <div [formGroupName]="i">
+                    <div class="campo">
+                        <label>Nome</label>
+                        <input type="text" formControlName="contato_nome" required>
+                    </div>
+                    <div class="grupo">
+                        <div class="campo">
+                            <label>Telefone</label>
+                            <input type="text" formControlName="contato_telefone" required>
+                        </div>
+                        <div class="campo">
+                            <label>Email</label>
+                            <input type="text" formControlName="contato_email" required>
+                        </div>
+                    </div>
+                    <br><br>
+                </div>
             </div>
         </div>
-    </div>
+        <button type="submit" class="cadastrar">Cadastrar</button>
+    </form>
 
-    <button type="submit">Cadastrar</button>
-</form>
+</div>
