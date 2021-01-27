@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "api-cadastro-frontend"
+    }
+  },
+  "defaultProject": "api-cadastro-frontend",
+  "cli": {
+    "analytics": "7021c70c-2f12-45b8-bd4c-c14b009ea7f7"
+  }
 }

@@ -1,0 +1,38 @@
+<form [formGroup]="form" (ngSubmit)="salvar()">
+
+    <label>
+        Nome:
+        <input type="text" formControlName="nome" required>
+    </label>
+    <label>
+        CPF:
+        <input type="text" formControlName="cpf" required>
+    </label>
+    <label>
+        Nascimento:
+        <input type="date" formControlName="nascimento" required>
+    </label>
+
+    <h3>Contatos</h3>
+    <button type='button' (click)="adicionarContato()">Adicionar Contato</button>
+    <div formArrayName="contatos">
+        <div *ngFor="let c of contatos.controls; let i=index">
+            <div [formGroupName]="i">
+                <label>
+                    Nome:
+                    <input type="text" formControlName="contato_nome" required>
+                </label>
+                <label>
+                    Telefone:
+                    <input type="text" formControlName="contato_telefone" required>
+                </label>
+                <label>
+                    Email:
+                    <input type="text" formControlName="contato_email" required>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <button type="submit">Cadastrar</button>
+</form>
